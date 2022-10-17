@@ -8,5 +8,5 @@ public class DistanceController
 {
     [HttpGet("calculation")]
     public async Task<object> Calculate()
-        => await _getAllToDosHandler.Handle(new GetAllToDos());
+        => await _handler.Handle(new query());
 }
