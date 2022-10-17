@@ -7,7 +7,7 @@ namespace TwoPointsDistanceApp.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class DistanceController
+public class DistanceController : ControllerBase
 {
     private readonly IQueryDispatcher _queryDispatcher;
 
@@ -16,7 +16,7 @@ public class DistanceController
         _queryDispatcher = queryDispatcher;
     }
 
-    [HttpGet("calculation")]
+    [HttpPut("calculation")]
     public async Task<object> Calculate(CalculateDistanceRequest request)
         => await _queryDispatcher.ExecuteAsync<CalculateDistance, double>(request.ToCommand());
 }

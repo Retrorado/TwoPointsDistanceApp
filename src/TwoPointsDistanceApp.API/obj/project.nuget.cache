@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "2GNSYzzyBtWWGX34k3lYUly0L5qwD2kU7bDMMJMjc+bXaxATjstxTnymPBSBbw/OhLaOunNrFdaLykB7nPZmWQ==",
+  "dgSpecHash": "304MBmzsbJb/FV268WDhJbAeS3rEITLrTzLH25Na5qybR6WElUniubZwXGOCdwrFuY6nZ/Hyz31GnTA3a5kbvg==",
   "success": true,
   "projectFilePath": "C:\\Users\\rwojciec\\Documents\\Private\\Google drive\\Programowanie\\Projects\\TwoPointsDistanceApp\\src\\TwoPointsDistanceApp.API\\TwoPointsDistanceApp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rwojciec\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\rwojciec\\.nuget\\packages\\microsoft.extensions.dependencymodel\\6.0.0\\microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512",
+    "C:\\Users\\rwojciec\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\rwojciec\\.nuget\\packages\\scrutor\\4.2.0\\scrutor.4.2.0.nupkg.sha512",
+    "C:\\Users\\rwojciec\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\rwojciec\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\rwojciec\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\rwojciec\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\rwojciec\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\rwojciec\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
