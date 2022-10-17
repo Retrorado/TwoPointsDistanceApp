@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using TwoPointsDistanceApp.Application.Common.CQRS;
+using TwoPointsDistanceApp.Application.Features.Distance.Commands.Calculation;
+using TwoPointsDistanceApp.Controllers.Requests;
 
 namespace TwoPointsDistanceApp.Controllers;
 
@@ -6,7 +9,14 @@ namespace TwoPointsDistanceApp.Controllers;
 [Route("[controller]")]
 public class DistanceController
 {
+    private readonly IQueryDispatcher _queryDispatcher;
+
+    public DistanceController(IQueryDispatcher queryDispatcher)
+    {
+        _queryDispatcher = queryDispatcher;
+    }
+
     [HttpGet("calculation")]
-    public async Task<object> Calculate()
-        => await _handler.Handle(new query());
+    public async Task<object> Calculate(CalculateDistanceRequest request)
+        => await _queryDispatcher.ExecuteAsync<CalculateDistance, double>(request.ToCommand());
 }
