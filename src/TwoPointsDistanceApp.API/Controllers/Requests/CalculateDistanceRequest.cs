@@ -1,4 +1,4 @@
-using TwoPointsDistanceApp.Application.Features.Distance.Commands.Calculation;
+using TwoPointsDistanceApp.Application.Features.Distance.Queries.Calculation;
 
 namespace TwoPointsDistanceApp.Controllers.Requests;
 

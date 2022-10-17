@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TwoPointsDistanceApp.Application.Common.CQRS;
-using TwoPointsDistanceApp.Application.Features.Distance.Commands.Calculation;
+using TwoPointsDistanceApp.Application.Features.Distance.Queries.Calculation;
 using TwoPointsDistanceApp.Controllers.Requests;
 
 namespace TwoPointsDistanceApp.Controllers;
