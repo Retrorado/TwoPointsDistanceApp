@@ -14,7 +14,7 @@ public class SphericalLawOfCosinesDistanceCalculatorTests
         _sut = new SphericalLawOfCosinesDistanceCalculator();
     }
 
-    private double Act(Coordinates pointA, Coordinates pointB) => _sut.Calculate(pointA, pointB);
+    private LengthUnit Act(Coordinates pointA, Coordinates pointB) => _sut.Calculate(pointA, pointB);
 
     [Fact]
     public void ShouldCalculateDistance()
@@ -27,6 +27,6 @@ public class SphericalLawOfCosinesDistanceCalculatorTests
         var result = Act(pointA, pointB);
 
         //Assert
-        result.Should().BeGreaterThan(0);
+        result.Meters.Should().BeGreaterThan(0);
     }
 }

@@ -9,6 +9,8 @@ public record LengthUnit
     public static readonly LengthUnit Zero = new(MinMetersValue);
 
     public double Meters { get; }
+    public double Kilometers => Meters / 1000;
+    public double Miles => Meters * 0.0006213712;
 
     private LengthUnit(double meters)
     {
@@ -21,10 +23,6 @@ public record LengthUnit
     }
 
     public static LengthUnit FromMeters(double meters) => new(meters);
-
-    public double Kilometers() => Meters / 1000;
-
-    public double Miles() => Meters * 0.0006213712;
 
     public static LengthUnit operator +(LengthUnit lengthUnit, LengthUnit other)
     {
