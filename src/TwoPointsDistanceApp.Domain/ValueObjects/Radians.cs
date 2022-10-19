@@ -14,4 +14,14 @@ public record Radians
     public static Radians FromDegrees(Degrees degrees) => new(degrees.Value * Math.PI / 180.0);
 
     public Degrees ToDegrees() => Degrees.FromRadians(this);
+
+    public static Radians operator +(Radians radians, Radians other)
+    {
+        return new Radians(radians.Value + other.Value);
+    }
+
+    public static Radians operator -(Radians radians, Radians other)
+    {
+        return new Radians(radians.Value - other.Value);
+    }
 }

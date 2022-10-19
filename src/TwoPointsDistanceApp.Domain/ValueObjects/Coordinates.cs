@@ -9,8 +9,8 @@ public record Coordinates
     private const double MinLongitudeValue = -180;
     private const double MaxLongitudeValue = 180;
 
-    public double Latitude { get; }
-    public double Longitude { get; }
+    public Degrees Latitude { get; }
+    public Degrees Longitude { get; }
 
     private Coordinates(double latitude, double longitude)
     {
@@ -24,8 +24,8 @@ public record Coordinates
             throw new InvalidLongitudeValueException(longitude);
         }
 
-        Latitude = latitude;
-        Longitude = longitude;
+        Latitude = Degrees.Create(latitude);
+        Longitude = Degrees.Create(longitude);
     }
 
     public static Coordinates Create(double latitude, double longitude) => new(latitude, longitude);

@@ -10,9 +10,9 @@ public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
     {
         if (pointA == pointB) return 0;
 
-        var phiA = Degrees.Create(pointA.Latitude).ToRadians();
-        var phiB = Degrees.Create(pointB.Latitude).ToRadians();
-        var delta = Degrees.Create(pointB.Longitude - pointA.Longitude).ToRadians();
+        var phiA = pointA.Latitude.ToRadians();
+        var phiB = pointB.Latitude.ToRadians();
+        var delta = (pointB.Longitude - pointA.Longitude).ToRadians();
 
         var distance = Math.Acos(
             (Math.Sin(phiA.Value) * Math.Sin(phiB.Value))
