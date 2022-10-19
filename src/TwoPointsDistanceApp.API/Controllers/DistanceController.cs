@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using TwoPointsDistanceApp.Application.Common.CQRS;
 using TwoPointsDistanceApp.Application.Features.Distance.Queries.Calculation;
+using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
 using TwoPointsDistanceApp.Controllers.Requests;
-using TwoPointsDistanceApp.Domain.ValueObjects;
 
 namespace TwoPointsDistanceApp.Controllers;
 
@@ -18,6 +18,6 @@ public class DistanceController : ControllerBase
     }
 
     [HttpPut("calculation")]
-    public async Task<LengthUnit> Calculate(CalculateDistanceRequest request)
-        => await _queryDispatcher.ExecuteAsync<CalculateDistance, LengthUnit>(request.ToCommand());
+    public async Task<LengthUnitDto> Calculate(CalculateDistanceRequest request)
+        => await _queryDispatcher.ExecuteAsync<CalculateDistance, LengthUnitDto>(request.ToCommand());
 }
