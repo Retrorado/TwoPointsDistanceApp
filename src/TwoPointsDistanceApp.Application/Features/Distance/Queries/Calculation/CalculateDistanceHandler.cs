@@ -16,7 +16,8 @@ public class CalculateDistanceHandler : IQueryHandler<CalculateDistance, LengthU
 
     public ValueTask<LengthUnitDto> HandleAsync(CalculateDistance query, CancellationToken ct)
     {
-        var distanceCalculator = _distanceCalculators.First();
+        var distanceCalculator = _distanceCalculators.FirstOrDefault(calculator => calculator.IsMatchFor(query.Formula));
+        distanceCalculator ??= _distanceCalculators.First();
 
         var lengthUnit = distanceCalculator.Calculate(query.PointA, query.PointB);
         return ValueTask.FromResult(lengthUnit.ToApiContract());

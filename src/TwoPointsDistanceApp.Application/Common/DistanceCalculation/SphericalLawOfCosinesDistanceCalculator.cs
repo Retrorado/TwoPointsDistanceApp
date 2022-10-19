@@ -1,3 +1,4 @@
+using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
 using TwoPointsDistanceApp.Domain.Constants;
 using TwoPointsDistanceApp.Domain.ValueObjects;
 
@@ -8,6 +9,8 @@ namespace TwoPointsDistanceApp.Application.Common.DistanceCalculation;
 /// </summary>
 public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
 {
+    private const DistanceCalculationFormula Formula = DistanceCalculationFormula.SphericalLawOfCosines;
+
     public LengthUnit Calculate(Coordinates pointA, Coordinates pointB)
     {
         if (pointA == pointB) return LengthUnit.Zero;
@@ -23,4 +26,6 @@ public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
 
         return LengthUnit.FromMeters(distance);
     }
+
+    public bool IsMatchFor(DistanceCalculationFormula formula) => Formula == formula;
 }
