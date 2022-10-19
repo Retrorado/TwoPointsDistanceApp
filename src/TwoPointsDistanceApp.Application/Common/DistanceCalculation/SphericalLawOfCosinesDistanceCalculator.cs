@@ -6,9 +6,9 @@ public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
 {
     private const double RadiusInMeters = 6371000;
 
-    public double Calculate(Coordinates pointA, Coordinates pointB)
+    public LengthUnit Calculate(Coordinates pointA, Coordinates pointB)
     {
-        if (pointA == pointB) return 0;
+        if (pointA == pointB) return LengthUnit.Zero;
 
         var phiA = pointA.Latitude.ToRadians();
         var phiB = pointB.Latitude.ToRadians();
@@ -19,6 +19,6 @@ public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
             + (Math.Cos(phiA.Value) * Math.Cos(phiB.Value) * Math.Cos(delta.Value))
         ) * RadiusInMeters;
 
-        return distance;
+        return LengthUnit.FromMeters(distance);
     }
 }
