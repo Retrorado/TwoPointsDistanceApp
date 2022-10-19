@@ -9,7 +9,6 @@ using TwoPointsDistanceApp.API.IntegrationTests.Setup;
 using TwoPointsDistanceApp.Application.Common.DistanceCalculators;
 using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
 using TwoPointsDistanceApp.Controllers.Requests;
-using TwoPointsDistanceApp.Domain.ValueObjects;
 using TwoPointsDistanceApp.Responses;
 using Xunit;
 
@@ -17,13 +16,11 @@ namespace TwoPointsDistanceApp.API.IntegrationTests.Tests;
 
 public class DistanceControllerTests : IClassFixture<TestWebApplicationFactory<Program>>
 {
-    private readonly TestWebApplicationFactory<Program> _factory;
     private readonly HttpClient _httpClient;
 
     public DistanceControllerTests(TestWebApplicationFactory<Program> factory)
     {
-        _factory = factory;
-        _httpClient = _factory.HttpClient;
+        _httpClient = factory.HttpClient;
     }
 
     [Theory]
