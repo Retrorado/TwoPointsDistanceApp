@@ -19,9 +19,11 @@ public static class DependencyInjectionExtension
                 .AsImplementedInterfaces()
                 .WithTransientLifetime()));
 
-    private static IServiceCollection AddServices(this IServiceCollection services)
-    {
-        services.AddScoped<IDistanceCalculator, SphericalLawOfCosinesDistanceCalculator>();
-        return services;
-    }
+    private static IServiceCollection AddServices(this IServiceCollection services) => services.AddDistanceCalculators();
+
+    private static IServiceCollection AddDistanceCalculators(this IServiceCollection services) =>
+        services
+            .AddScoped<IDistanceCalculator, SphericalLawOfCosinesDistanceCalculator>()
+            .AddScoped<IDistanceCalculator, HaversineDistanceCalculator>()
+            .AddScoped<IDistanceCalculator, EquirectangularApproximationDistanceCalculator>();
 }

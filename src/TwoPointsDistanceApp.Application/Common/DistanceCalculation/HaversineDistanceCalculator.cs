@@ -3,7 +3,7 @@ using TwoPointsDistanceApp.Domain.ValueObjects;
 
 namespace TwoPointsDistanceApp.Application.Common.DistanceCalculation;
 
-public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
+public class HaversineDistanceCalculator : IDistanceCalculator
 {
     public LengthUnit Calculate(Coordinates pointA, Coordinates pointB)
     {
@@ -11,12 +11,15 @@ public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
 
         var phiA = pointA.Latitude.ToRadians();
         var phiB = pointB.Latitude.ToRadians();
+        var deltaLatitude = (pointB.Latitude - pointA.Latitude).ToRadians();
         var deltaLongitude = (pointB.Longitude - pointA.Longitude).ToRadians();
 
-        var distance = Math.Acos(
-            (Math.Sin(phiA.Value) * Math.Sin(phiB.Value))
-            + (Math.Cos(phiA.Value) * Math.Cos(phiB.Value) * Math.Cos(deltaLongitude.Value))
-        ) * EarthConstants.RadiusInMeters;
+        var a = Math.Sin(deltaLatitude.Value / 2) * Math.Sin(deltaLatitude.Value / 2)
+                + Math.Cos(phiA.Value) * Math.Cos(phiB.Value) * Math.Sin(deltaLongitude.Value / 2) * Math.Sin(deltaLongitude.Value / 2);
+
+        var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+
+        var distance = EarthConstants.RadiusInMeters * c;
 
         return LengthUnit.FromMeters(distance);
     }
