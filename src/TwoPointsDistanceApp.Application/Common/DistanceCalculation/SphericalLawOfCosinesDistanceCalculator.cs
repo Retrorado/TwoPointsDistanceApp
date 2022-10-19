@@ -3,6 +3,9 @@ using TwoPointsDistanceApp.Domain.ValueObjects;
 
 namespace TwoPointsDistanceApp.Application.Common.DistanceCalculation;
 
+/// <summary>
+/// d = acos( sin φ1 ⋅ sin φ2 + cos φ1 ⋅ cos φ2 ⋅ cos Δλ ) ⋅ R
+/// </summary>
 public class SphericalLawOfCosinesDistanceCalculator : IDistanceCalculator
 {
     public LengthUnit Calculate(Coordinates pointA, Coordinates pointB)
