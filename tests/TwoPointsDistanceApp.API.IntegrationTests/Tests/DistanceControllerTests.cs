@@ -8,7 +8,9 @@ using TwoPointsDistanceApp.API.IntegrationTests.Common.Factories.Requests;
 using TwoPointsDistanceApp.API.IntegrationTests.Setup;
 using TwoPointsDistanceApp.Application.Common.DistanceCalculators;
 using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
+using TwoPointsDistanceApp.Controllers.Requests;
 using TwoPointsDistanceApp.Domain.ValueObjects;
+using TwoPointsDistanceApp.Responses;
 using Xunit;
 
 namespace TwoPointsDistanceApp.API.IntegrationTests.Tests;
@@ -36,11 +38,29 @@ public class DistanceControllerTests : IClassFixture<TestWebApplicationFactory<P
         var expectedValue = distanceCalculator.Calculate(request.PointA.ToDomainContract(), request.PointB.ToDomainContract());
 
         //Act
-        var (response, result) = await _httpClient.CalculateDistance(request);
+        var (response, result) = await _httpClient.CalculateDistance<LengthUnitDto>(request);
 
         //Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
         result.Meters.Should().Be(expectedValue.Meters);
+    }
+
+    [Fact]
+    public async Task ShouldReturnErrorResponseWhenValuesAreIncorrect()
+    {
+        //Arrange
+        var request = CalculateDistanceRequestsFactory.Create() with
+        {
+            PointA = new CoordinatesDto(500, 50),
+            PointB = new CoordinatesDto(-500, -50),
+        };
+
+        //Act
+        var (response, result) = await _httpClient.CalculateDistance<ErrorApiResponse>(request);
+
+        //Assert
+        response.StatusCode.Should().Be(HttpStatusCode.UnprocessableEntity);
+        result.Code.Should().Be("InvalidLatitudeValueException");
     }
 
     private static IDistanceCalculator GetCalculatorFor(DistanceCalculationFormula calculationFormula) =>

@@ -25,7 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapControllers();
-
+app.UseApi();
 app.Run();
 
 // It's workaround for integration tests
