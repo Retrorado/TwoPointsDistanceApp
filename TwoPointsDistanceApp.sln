@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.Application.UnitTests", "tests\TwoPointsDistanceApp.Application.UnitTests\TwoPointsDistanceApp.Application.UnitTests.csproj", "{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.API.IntegrationTests", "tests\TwoPointsDistanceApp.API.IntegrationTests\TwoPointsDistanceApp.API.IntegrationTests.csproj", "{4286B604-9038-49AA-B11F-42E9F66F7FD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4286B604-9038-49AA-B11F-42E9F66F7FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4286B604-9038-49AA-B11F-42E9F66F7FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4286B604-9038-49AA-B11F-42E9F66F7FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4286B604-9038-49AA-B11F-42E9F66F7FD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E7090F51-2DC7-49FB-A81A-F41804054510} = {69BF0255-4F4D-4792-B335-D444453C2D63}
@@ -54,5 +60,6 @@ Global
 		{B820844B-6116-4777-9527-4F66727B4055} = {69BF0255-4F4D-4792-B335-D444453C2D63}
 		{DB301C4E-099D-45F4-B824-5EAE19A1549A} = {B1367548-3428-4428-8AD3-1BE7AD4F0CD0}
 		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC} = {B1367548-3428-4428-8AD3-1BE7AD4F0CD0}
+		{4286B604-9038-49AA-B11F-42E9F66F7FD1} = {B1367548-3428-4428-8AD3-1BE7AD4F0CD0}
 	EndGlobalSection
 EndGlobal

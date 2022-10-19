@@ -18,6 +18,9 @@ public class DistanceController : ControllerBase
     }
 
     [HttpPut("calculation")]
-    public async Task<LengthUnitDto> Calculate(CalculateDistanceRequest request)
-        => await _queryDispatcher.ExecuteAsync<CalculateDistance, LengthUnitDto>(request.ToCommand());
+    public async Task<IActionResult> Calculate(CalculateDistanceRequest request)
+    {
+        var response = await _queryDispatcher.ExecuteAsync<CalculateDistance, LengthUnitDto>(request.ToCommand());
+        return Ok(response);
+    }
 }
