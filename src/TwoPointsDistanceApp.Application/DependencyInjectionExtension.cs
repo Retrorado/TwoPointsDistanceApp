@@ -21,7 +21,7 @@ public static class DependencyInjectionExtension
 
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
-        services.AddScoped<IDistanceCalculator, DistanceCalculator>();
+        services.AddScoped<IDistanceCalculator, SphericalLawOfCosinesDistanceCalculator>();
         return services;
     }
 }

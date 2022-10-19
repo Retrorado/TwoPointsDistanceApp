@@ -14,6 +14,6 @@ public class CalculateDistanceHandler : IQueryHandler<CalculateDistance, double>
 
     public ValueTask<double> HandleAsync(CalculateDistance query, CancellationToken ct)
     {
-        return ValueTask.FromResult(_distanceCalculator.Calculate(query.Latitude, query.Longitude));
+        return ValueTask.FromResult(_distanceCalculator.Calculate(query.PointA, query.PointB));
     }
 }

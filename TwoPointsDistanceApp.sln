@@ -10,6 +10,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.Infrastructure", "src\TwoPointsDistanceApp.Infrastructure\TwoPointsDistanceApp.Infrastructure.csproj", "{B820844B-6116-4777-9527-4F66727B4055}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B1367548-3428-4428-8AD3-1BE7AD4F0CD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.Domain.UnitTests", "tests\TwoPointsDistanceApp.Domain.UnitTests\TwoPointsDistanceApp.Domain.UnitTests.csproj", "{DB301C4E-099D-45F4-B824-5EAE19A1549A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointsDistanceApp.Application.UnitTests", "tests\TwoPointsDistanceApp.Application.UnitTests\TwoPointsDistanceApp.Application.UnitTests.csproj", "{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,11 +38,21 @@ Global
 		{B820844B-6116-4777-9527-4F66727B4055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B820844B-6116-4777-9527-4F66727B4055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B820844B-6116-4777-9527-4F66727B4055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB301C4E-099D-45F4-B824-5EAE19A1549A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB301C4E-099D-45F4-B824-5EAE19A1549A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB301C4E-099D-45F4-B824-5EAE19A1549A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB301C4E-099D-45F4-B824-5EAE19A1549A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E7090F51-2DC7-49FB-A81A-F41804054510} = {69BF0255-4F4D-4792-B335-D444453C2D63}
 		{5FACF856-80EF-467E-AB11-C9AA4C854B3C} = {69BF0255-4F4D-4792-B335-D444453C2D63}
 		{E8062A94-7F0A-46E4-A899-EC7322271F71} = {69BF0255-4F4D-4792-B335-D444453C2D63}
 		{B820844B-6116-4777-9527-4F66727B4055} = {69BF0255-4F4D-4792-B335-D444453C2D63}
+		{DB301C4E-099D-45F4-B824-5EAE19A1549A} = {B1367548-3428-4428-8AD3-1BE7AD4F0CD0}
+		{7D713EEC-7444-4E1F-9ABA-ABDBB6E812AC} = {B1367548-3428-4428-8AD3-1BE7AD4F0CD0}
 	EndGlobalSection
 EndGlobal
