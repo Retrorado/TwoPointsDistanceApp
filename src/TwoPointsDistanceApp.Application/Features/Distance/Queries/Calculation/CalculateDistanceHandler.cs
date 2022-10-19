@@ -1,5 +1,5 @@
 using TwoPointsDistanceApp.Application.Common.CQRS;
-using TwoPointsDistanceApp.Application.Common.DistanceCalculation;
+using TwoPointsDistanceApp.Application.Common.DistanceCalculators;
 using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
 using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs.Extensions;
 

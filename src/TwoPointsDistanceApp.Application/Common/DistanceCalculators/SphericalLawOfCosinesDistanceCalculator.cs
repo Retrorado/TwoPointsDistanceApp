@@ -2,7 +2,7 @@ using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
 using TwoPointsDistanceApp.Domain.Constants;
 using TwoPointsDistanceApp.Domain.ValueObjects;
 
-namespace TwoPointsDistanceApp.Application.Common.DistanceCalculation;
+namespace TwoPointsDistanceApp.Application.Common.DistanceCalculators;
 
 /// <summary>
 /// d = acos( sin φ1 ⋅ sin φ2 + cos φ1 ⋅ cos φ2 ⋅ cos Δλ ) ⋅ R

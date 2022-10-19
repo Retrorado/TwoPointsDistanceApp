@@ -1,5 +1,5 @@
 using FluentAssertions;
-using TwoPointsDistanceApp.Application.Common.DistanceCalculation;
+using TwoPointsDistanceApp.Application.Common.DistanceCalculators;
 using TwoPointsDistanceApp.Domain.ValueObjects;
 using Xunit;
 

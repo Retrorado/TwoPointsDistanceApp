@@ -2,7 +2,7 @@ using TwoPointsDistanceApp.Application.Features.Distance.Queries.DTOs;
 using TwoPointsDistanceApp.Domain.Constants;
 using TwoPointsDistanceApp.Domain.ValueObjects;
 
-namespace TwoPointsDistanceApp.Application.Common.DistanceCalculation;
+namespace TwoPointsDistanceApp.Application.Common.DistanceCalculators;
 
 /// <summary>
 /// a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
